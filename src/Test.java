@@ -11,5 +11,7 @@ public class Test {
         testKonto.createBuchung(1000,"Geld1");
         testKonto.createBuchung(134,"minusGeld");
         System.out.println(testKonto.toString());
+        System.out.println(testKonto.findBuchung("BNr. 001"));
+        System.out.println(testKonto.getBuchangasanzahl());
     }
 }

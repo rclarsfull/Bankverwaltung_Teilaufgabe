@@ -57,6 +57,10 @@ public class Buchung {
         this.betrag = betrag;
     }
 
+    public String getBuchungsnummer() {
+        return buchungsnummer;
+    }
+
     @Override
     public String toString() {
         if (this==null) return "null";

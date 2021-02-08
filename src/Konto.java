@@ -33,4 +33,25 @@ public class Konto {
         ausgabe+="}";
         return ausgabe;
     }
+
+    public int getBuchangasanzahl(){
+        Buchung temp=letzsteBuchung;
+        int zaehler=0;
+        while(temp!=null){
+            temp=temp.getVorherigeBuchung();
+            zaehler++;
+        }
+        return zaehler;
+
+    }
+
+    public Buchung findBuchung(String buchungsnummer){
+        Buchung temp=letzsteBuchung;
+        Buchung ausgabe=null;
+        while(temp!=null && !temp.getBuchungsnummer().equalsIgnoreCase(buchungsnummer)){
+            temp=temp.getVorherigeBuchung();
+        }
+        if (temp.getBuchungsnummer().equalsIgnoreCase(buchungsnummer)) return temp;
+        return null;
+    }
 }
